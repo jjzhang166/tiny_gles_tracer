@@ -1,0 +1,46 @@
+#-------------------------------------------------------------------------------
+# If application links "libEGL.so" directly, just set LD_PRELOAD.
+#-------------------------------------------------------------------------------
+export LD_PRELOAD=~/work/GLEStrace/libGLEStrace.so
+
+
+#-------------------------------------------------------------------------------
+# If application doesn't link "libEGL.so" (probably application use dlopen("libEGL.so"))
+# fake "libEGL.so" and "libGLESv2.so" (symbolic linked to libGLEStrace.so)
+# must be placed on the first place of LD_LIBRARY_PATH.
+#
+#  1) create fake EGL/GLES libs
+#    $ ln -s libGLEStrace.so libEGL.so
+#    $ ln -s libGLEStrace.so libEGL.so.1
+#    $ ln -s libGLEStrace.so libEGL.so.1.0.0
+#    $ ln -s libGLEStrace.so libGLESv2.so
+#    $ ln -s libGLEStrace.so libGLESv2.so.2
+#    $ ln -s libGLEStrace.so libGLESv2.so.2.0.0
+#
+#  2) set LD_LIBRARY_PATH so that fake libs can be found first by loader.
+#  3) set GLES_TRACE_REAL_LIBEGL/LIBGLES so that real libs can be found by wrapper.
+#-------------------------------------------------------------------------------
+#unset LD_PRELOAD
+#export LD_LIBRARY_PATH=~/work/GLEStrace:$LD_LIBRARY_PATH
+#export GLES_TRACE_REAL_LIBEGL=/usr/lib/x86_64-linux-gnu/libEGL.so
+#export GLES_TRACE_REAL_LIBGLES=/usr/lib/x86_64-linux-gnu/libGLESv2.so
+
+
+
+
+
+#-------------------------------------------------------------------------------
+# Customize options
+#-------------------------------------------------------------------------------
+export GLES_TRACE_LOG_FILE="trace_log.txt"
+
+export GLES_TRACE_CAPTURE_ON_DRAW=0
+export GLES_TRACE_CAPTURE_ON_SWAP=0
+export GLES_TRACE_GETERROR_ON_DRAW=0
+export GLES_TRACE_GETERROR_ON_SWAP=0
+export GLES_TRACE_FORCE_LINE_RENDER=0
+
+#export GLES_TRACE_FORCE_GL_VERSION="OpenGL ES 2.0"
+#export GLES_TRACE_FORCE_GL_VENDOR="Dummy vendor"
+#export GLES_TRACE_FORCE_GL_RENDERER="Dummy renderer"
+#export GLES_TRACE_FORCE_GL_EXTENSIONS="Dummy_extension"
