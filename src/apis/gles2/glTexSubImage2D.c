@@ -35,6 +35,7 @@ get_tex_format_str (GLint format)
     case GL_LUMINANCE                   : return "GL_LUMINANCE";
     case GL_LUMINANCE_ALPHA             : return "GL_LUMINANCE_ALPHA";
     case GL_BGRA_EXT                    : return "GL_BGRA_EXT";
+    case GL_RED                         : return "GL_RED";
     }
     snprintf (s_strbuf, sizeof (s_strbuf), "0x%x", format);
     return s_strbuf;
@@ -59,6 +60,10 @@ get_tex_type_str (GLenum type)
     ((void (*)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const void *pixels)) \
     GLES_ENTRY_PTR(glTexSubImage2D_Idx))
 
+#define glGetIntegerv_   \
+    ((void (*)(GLenum pname, GLint *data))  \
+    GLES_ENTRY_PTR(glGetIntegerv_Idx))
+
 
 GL_APICALL void GL_APIENTRY
 glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height,
@@ -78,6 +83,11 @@ glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsiz
         char fname[128];
         snprintf (fname, sizeof(fname), "%05d_glTexSubImage2D_%05d.tga", g_pid, s_count);
 
+        int row_length = 0;
+        glGetIntegerv_ (GL_UNPACK_ROW_LENGTH, &row_length);
+        if (row_length != 0)
+            width = row_length;
+
         if (format == GL_RGBA && type == GL_UNSIGNED_BYTE)
         {
             save_to_tga_file (fname, (void *)pixels, width, height);
@@ -87,8 +97,8 @@ glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsiz
         if (format == GL_BGRA_EXT && type == GL_UNSIGNED_BYTE)
         {
             int  size = width * height * 4;
-            char *imgdst = (char *)malloc (size);
-            char *imgsrc = (char *)pixels;
+            unsigned char *imgdst = (unsigned char *)malloc (size);
+            unsigned char *imgsrc = (unsigned char *)pixels;
             if (imgdst)
             {
                 for (int i = 0; i < width * height; i ++)
@@ -105,11 +115,12 @@ glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsiz
         }
 
         if ((format == GL_LUMINANCE && type == GL_UNSIGNED_BYTE) ||
-            (format == GL_ALPHA     && type == GL_UNSIGNED_BYTE) )
+            (format == GL_ALPHA     && type == GL_UNSIGNED_BYTE) ||
+            (format == GL_RED       && type == GL_UNSIGNED_BYTE))
         {
             int  size = width * height * 4;
-            char *imgdst = (char *)malloc (size);
-            char *imgsrc = (char *)pixels;
+            unsigned char *imgdst = (unsigned char *)malloc (size);
+            unsigned char *imgsrc = (unsigned char *)pixels;
             if (imgdst)
             {
                 for (int i = 0; i < width * height; i ++)
