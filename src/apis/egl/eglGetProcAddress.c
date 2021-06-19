@@ -16,7 +16,9 @@ eglGetProcAddress (const char *procname)
 
     __eglMustCastToProperFunctionPointerType func = NULL;
 
-#if 1
+    if (eglGetProcAddress_)
+        func = eglGetProcAddress_ (procname);
+
     for (int i = 0; i < glAPIMAX_Idx; i ++)
     {
         if (GLES_ENTRY_NAME(i) == NULL)
@@ -24,15 +26,24 @@ eglGetProcAddress (const char *procname)
 
         if (strcmp (procname, GLES_ENTRY_NAME(i)) == 0)
         {
-            func = (__eglMustCastToProperFunctionPointerType)GLES_ENTRY_WRAP_PTR(i);
-            fprintf (g_log_fp, "found in wrapper:%p\n", func);
-            return func;
+            /* if dlsym() can't get this function,
+               replace it with the func obtained by eglGetProcAddress() */
+            if (GLES_ENTRY_PTR (i) == NULL)
+            {
+                fprintf (g_log_fp, "[replace]");
+                GLES_ENTRY_PTR (i) = (void *)func;
+            }
+
+            /* if the function is successfully retrieved by dlsym() or eglGetProcAddress(),
+               return the wrapper function */
+            if (GLES_ENTRY_PTR (i))
+            {
+                void *wrap_func = GLES_ENTRY_WRAP_PTR(i);
+                fprintf (g_log_fp, "found in wrapper:%p\n", wrap_func);
+                return wrap_func;
+            }
         }
     }
-#endif
-
-    if (eglGetProcAddress_)
-        func = eglGetProcAddress_ (procname);
 
     fprintf (g_log_fp, "%p\n", func);
     return func;
