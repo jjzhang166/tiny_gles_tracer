@@ -26,6 +26,7 @@ get_query_name_str (GLenum name)
     case GL_ALPHA_BITS                      : return "GL_ALPHA_BITS";
     case GL_DEPTH_BITS                      : return "GL_DEPTH_BITS";
     case GL_STENCIL_BITS                    : return "GL_STENCIL_BITS";
+    case GL_NUM_EXTENSIONS                  : return "GL_NUM_EXTENSIONS";
     case GL_NUM_SHADER_BINARY_FORMATS       : return "GL_NUM_SHADER_BINARY_FORMATS";
     case GL_NUM_PROGRAM_BINARY_FORMATS      : return "GL_NUM_PROGRAM_BINARY_FORMATS";
     case GL_CURRENT_PROGRAM                 : return "GL_CURRENT_PROGRAM";

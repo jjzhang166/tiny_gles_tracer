@@ -51,8 +51,6 @@ eglSwapBuffers (EGLDisplay dpy, EGLSurface surface)
     EGLBoolean ret = EGL_FALSE;
     if (eglSwapBuffers_)
     {
-        ret = eglSwapBuffers_ (dpy, surface);
-
         if (g_capture_on_swap)
         {
             if (eglQuerySurface_ && glReadPixels_)
@@ -72,6 +70,8 @@ eglSwapBuffers (EGLDisplay dpy, EGLSurface surface)
             }
         }
 
+        ret = eglSwapBuffers_ (dpy, surface);
+
         if (g_geterror_on_swap)
         {
             if (glGetError_)
@@ -82,6 +82,7 @@ eglSwapBuffers (EGLDisplay dpy, EGLSurface surface)
         }
     }
     fprintf (g_log_fp, "\n");
+    fflush (g_log_fp);
     g_frame_counter ++;
 
     return ret;
