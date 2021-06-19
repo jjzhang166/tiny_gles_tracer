@@ -246,6 +246,14 @@ gles_entry_t gles_entry_table[] =
     DECLARE_CALL_ENTRY(glDrawBuffers),
     DECLARE_CALL_ENTRY(glDrawArraysInstanced),
     DECLARE_CALL_ENTRY(glDrawElementsInstanced),
+
+    DECLARE_CALL_ENTRY(glFenceSync),
+    DECLARE_CALL_ENTRY(glIsSync),
+    DECLARE_CALL_ENTRY(glDeleteSync),
+    DECLARE_CALL_ENTRY(glClientWaitSync),
+    DECLARE_CALL_ENTRY(glWaitSync),
+    DECLARE_CALL_ENTRY(glGetSynciv),
+
     DECLARE_CALL_ENTRY(glProgramBinary),
 
     DECLARE_CALL_ENTRY(glGetQueryiv),

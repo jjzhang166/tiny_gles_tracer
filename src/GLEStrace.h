@@ -255,6 +255,14 @@ enum gles_entry_idx
     glDrawBuffers_Idx,
     glDrawArraysInstanced_Idx,
     glDrawElementsInstanced_Idx,
+
+    glFenceSync_Idx,
+    glIsSync_Idx,
+    glDeleteSync_Idx,
+    glClientWaitSync_Idx,
+    glWaitSync_Idx,
+    glGetSynciv_Idx,
+
     glProgramBinary_Idx,
 
     glGetQueryiv_Idx,
