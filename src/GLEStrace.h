@@ -4,6 +4,8 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#define GL_GLEXT_PROTOTYPES
+
 #include <EGL/egl.h>
 
 #if defined (USE_GLES_32)
@@ -243,7 +245,17 @@ enum gles_entry_idx
     glVertexAttribPointer_Idx,
     glViewport_Idx,
 
+
+    /* GL_ES_2_0_EXT */
+    glTexBufferOES_Idx,
+    glTexBufferRangeOES_Idx,
+    glDrawArraysInstancedBaseInstanceEXT_Idx,
+    glDrawElementsInstancedBaseInstanceEXT_Idx,
+    glDrawElementsInstancedBaseVertexBaseInstanceEXT_Idx,
+
+
     /* GL_ES_VERSION_3_0 */
+    glBlitFramebuffer_Idx,
     glTexImage3D_Idx,
     glTexSubImage3D_Idx,
     //glCopyTexSubImage3D_Idx,
@@ -274,6 +286,8 @@ enum gles_entry_idx
     glGetSamplerParameteriv_Idx,
     glGetSamplerParameterfv_Idx,
     glGetInternalformativ_Idx,
+
+    glTexStorage2D_Idx,
 
 
     /* GL_ES_VERSION_3_1 */

@@ -234,7 +234,16 @@ gles_entry_t gles_entry_table[] =
     DECLARE_CALL_ENTRY(glViewport),
 
 
+    /* GL_ES_2_0_EXT */
+    DECLARE_CALL_ENTRY(glTexBufferOES),
+    DECLARE_CALL_ENTRY(glTexBufferRangeOES),
+    DECLARE_CALL_ENTRY(glDrawArraysInstancedBaseInstanceEXT),
+    DECLARE_CALL_ENTRY(glDrawElementsInstancedBaseInstanceEXT),
+    DECLARE_CALL_ENTRY(glDrawElementsInstancedBaseVertexBaseInstanceEXT),
+
+
     /* GL_ES_VERSION_3_0 */
+    DECLARE_CALL_ENTRY(glBlitFramebuffer),
     DECLARE_CALL_ENTRY(glTexImage3D),
     DECLARE_CALL_ENTRY(glTexSubImage3D),
     //DECLARE_CALL_ENTRY(glCopyTexSubImage3D),
@@ -265,6 +274,8 @@ gles_entry_t gles_entry_table[] =
     DECLARE_CALL_ENTRY(glGetSamplerParameteriv),
     DECLARE_CALL_ENTRY(glGetSamplerParameterfv),
     DECLARE_CALL_ENTRY(glGetInternalformativ),
+
+    DECLARE_CALL_ENTRY(glTexStorage2D),
 
 
     /* GL_ES_VERSION_3_1 */
