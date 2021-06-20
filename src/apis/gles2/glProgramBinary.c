@@ -38,7 +38,7 @@ glProgramBinary (GLuint program, GLenum binaryFormat, const void *binary, GLsize
 {
     prepare_gles_tracer ();
 
-    fprintf (g_log_fp, "glShaderBinary(%d, %s, %p, %d);\n", 
+    fprintf (g_log_fp, "glProgramBinary(%d, %s, %p, %d);\n",
              program, get_binary_name_str (binaryFormat), binary, length);
     glProgramBinary_ (program, binaryFormat, binary, length);
 }
