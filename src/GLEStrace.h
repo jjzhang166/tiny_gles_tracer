@@ -77,10 +77,17 @@ enum egl_entry_idx
     eglWaitNative_Idx,
 
     /* EGL_VERSION_1_1 */
+    eglBindTexImage_Idx,
+    eglReleaseTexImage_Idx,
+    eglSurfaceAttrib_Idx,
     eglSwapInterval_Idx,
 
     /* EGL_VERSION_1_2 */
     eglBindAPI_Idx,
+    eglQueryAPI_Idx,
+    eglCreatePbufferFromClientBuffer_Idx,
+    eglReleaseThread_Idx,
+    eglWaitClient_Idx,
 
     /* EGL_VERSION_1_4 */
     eglGetCurrentContext_Idx,

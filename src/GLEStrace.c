@@ -61,12 +61,19 @@ gles_entry_t egl_entry_table[] =
     DECLARE_CALL_ENTRY(eglWaitNative),
 
     /* EGL_VERSION_1_1 */
+    DECLARE_CALL_ENTRY(eglBindTexImage),
+    DECLARE_CALL_ENTRY(eglReleaseTexImage),
+    DECLARE_CALL_ENTRY(eglSurfaceAttrib),
     DECLARE_CALL_ENTRY(eglSwapInterval),
 
     /* EGL_VERSION_1_2 */
     DECLARE_CALL_ENTRY(eglBindAPI),
+    DECLARE_CALL_ENTRY(eglQueryAPI),
+    DECLARE_CALL_ENTRY(eglCreatePbufferFromClientBuffer),
+    DECLARE_CALL_ENTRY(eglReleaseThread),
+    DECLARE_CALL_ENTRY(eglWaitClient),
 
-    /* EGL_VERSION_1_2 */
+    /* EGL_VERSION_1_4 */
     DECLARE_CALL_ENTRY(eglGetCurrentContext),
 
     /* EGL_VERSION_1_5 */
