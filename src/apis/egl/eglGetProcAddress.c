@@ -19,28 +19,60 @@ eglGetProcAddress (const char *procname)
     if (eglGetProcAddress_)
         func = eglGetProcAddress_ (procname);
 
-    for (int i = 0; i < glAPIMAX_Idx; i ++)
+    if (!strncmp (procname, "egl", 3))
     {
-        if (GLES_ENTRY_NAME(i) == NULL)
-            continue;
-
-        if (strcmp (procname, GLES_ENTRY_NAME(i)) == 0)
+        for (int i = 0; i < eglAPIMAX_Idx; i ++)
         {
-            /* if dlsym() can't get this function,
-               replace it with the func obtained by eglGetProcAddress() */
-            if (GLES_ENTRY_PTR (i) == NULL)
-            {
-                fprintf (g_log_fp, "[replace]");
-                GLES_ENTRY_PTR (i) = (void *)func;
-            }
+            if (EGL_ENTRY_NAME(i) == NULL)
+                continue;
 
-            /* if the function is successfully retrieved by dlsym() or eglGetProcAddress(),
-               return the wrapper function */
-            if (GLES_ENTRY_PTR (i))
+            if (strcmp (procname, EGL_ENTRY_NAME(i)) == 0)
             {
-                void *wrap_func = GLES_ENTRY_WRAP_PTR(i);
-                fprintf (g_log_fp, "found in wrapper:%p\n", wrap_func);
-                return wrap_func;
+                /* if dlsym() can't get this function,
+                   replace it with the func obtained by eglGetProcAddress() */
+                if (EGL_ENTRY_PTR (i) == NULL)
+                {
+                    fprintf (g_log_fp, "[replace]");
+                    EGL_ENTRY_PTR (i) = (void *)func;
+                }
+
+                /* if the function is successfully retrieved by dlsym() or eglGetProcAddress(),
+                   return the wrapper function */
+                if (EGL_ENTRY_PTR (i))
+                {
+                    void *wrap_func = EGL_ENTRY_WRAP_PTR(i);
+                    fprintf (g_log_fp, "found in wrapper:%p\n", wrap_func);
+                    return wrap_func;
+                }
+            }
+        }
+    }
+
+    if (!strncmp (procname, "gl", 2))
+    {
+        for (int i = 0; i < glAPIMAX_Idx; i ++)
+        {
+            if (GLES_ENTRY_NAME(i) == NULL)
+                continue;
+
+            if (strcmp (procname, GLES_ENTRY_NAME(i)) == 0)
+            {
+                /* if dlsym() can't get this function,
+                   replace it with the func obtained by eglGetProcAddress() */
+                if (GLES_ENTRY_PTR (i) == NULL)
+                {
+                    fprintf (g_log_fp, "[replace]");
+                    GLES_ENTRY_PTR (i) = (void *)func;
+                }
+
+                /* if the function is successfully retrieved by dlsym() or eglGetProcAddress(),
+                   return the wrapper function */
+                if (GLES_ENTRY_PTR (i))
+                {
+                    void *wrap_func = GLES_ENTRY_WRAP_PTR(i);
+                    fprintf (g_log_fp, "found in wrapper:%p\n", wrap_func);
+                    return wrap_func;
+                }
             }
         }
     }

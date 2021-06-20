@@ -243,18 +243,27 @@ gles_entry_t gles_entry_table[] =
 
 
     /* GL_ES_VERSION_3_0 */
+    DECLARE_CALL_ENTRY(glReadBuffer),
     DECLARE_CALL_ENTRY(glBlitFramebuffer),
     DECLARE_CALL_ENTRY(glTexImage3D),
     DECLARE_CALL_ENTRY(glTexSubImage3D),
     //DECLARE_CALL_ENTRY(glCopyTexSubImage3D),
     //DECLARE_CALL_ENTRY(glCompressedTexImage3D),
     //DECLARE_CALL_ENTRY(glCompressedTexSubImage3D),
+    DECLARE_CALL_ENTRY(glUnmapBuffer),
     DECLARE_CALL_ENTRY(glRenderbufferStorageMultisample),
+    DECLARE_CALL_ENTRY(glMapBufferRange),
+    DECLARE_CALL_ENTRY(glFlushMappedBufferRange),
 
     DECLARE_CALL_ENTRY(glDrawRangeElements),
     DECLARE_CALL_ENTRY(glDrawBuffers),
     DECLARE_CALL_ENTRY(glDrawArraysInstanced),
     DECLARE_CALL_ENTRY(glDrawElementsInstanced),
+
+    DECLARE_CALL_ENTRY(glBindVertexArray),
+    DECLARE_CALL_ENTRY(glDeleteVertexArrays),
+    DECLARE_CALL_ENTRY(glGenVertexArrays),
+    DECLARE_CALL_ENTRY(glVertexAttribIPointer),
 
     DECLARE_CALL_ENTRY(glFenceSync),
     DECLARE_CALL_ENTRY(glIsSync),
@@ -263,7 +272,9 @@ gles_entry_t gles_entry_table[] =
     DECLARE_CALL_ENTRY(glWaitSync),
     DECLARE_CALL_ENTRY(glGetSynciv),
 
+    DECLARE_CALL_ENTRY(glGetProgramBinary),
     DECLARE_CALL_ENTRY(glProgramBinary),
+    DECLARE_CALL_ENTRY(glProgramParameteri),
 
     DECLARE_CALL_ENTRY(glGetQueryiv),
     DECLARE_CALL_ENTRY(glGetQueryObjectuiv),
@@ -275,6 +286,18 @@ gles_entry_t gles_entry_table[] =
     DECLARE_CALL_ENTRY(glGetSamplerParameterfv),
     DECLARE_CALL_ENTRY(glGetInternalformativ),
 
+    DECLARE_CALL_ENTRY(glGenSamplers),
+    DECLARE_CALL_ENTRY(glDeleteSamplers),
+    DECLARE_CALL_ENTRY(glBindSampler),
+    DECLARE_CALL_ENTRY(glSamplerParameteri),
+    DECLARE_CALL_ENTRY(glSamplerParameteriv),
+    DECLARE_CALL_ENTRY(glSamplerParameterf),
+    DECLARE_CALL_ENTRY(glSamplerParameterfv),
+
+    DECLARE_CALL_ENTRY(glVertexAttribDivisor),
+
+    DECLARE_CALL_ENTRY(glInvalidateFramebuffer),
+    DECLARE_CALL_ENTRY(glInvalidateSubFramebuffer),
     DECLARE_CALL_ENTRY(glTexStorage2D),
 
 
@@ -284,6 +307,7 @@ gles_entry_t gles_entry_table[] =
 
     DECLARE_CALL_ENTRY(glGetFramebufferParameteriv),
     DECLARE_CALL_ENTRY(glGetBooleani_v),
+    DECLARE_CALL_ENTRY(glMemoryBarrier),
     DECLARE_CALL_ENTRY(glGetMultisamplefv),
     DECLARE_CALL_ENTRY(glGetTexLevelParameteriv),
     DECLARE_CALL_ENTRY(glGetTexLevelParameterfv),
@@ -293,6 +317,9 @@ gles_entry_t gles_entry_table[] =
     DECLARE_CALL_ENTRY(glDrawElementsBaseVertex),
     DECLARE_CALL_ENTRY(glDrawRangeElementsBaseVertex),
     DECLARE_CALL_ENTRY(glDrawElementsInstancedBaseVertex),
+    DECLARE_CALL_ENTRY(glPatchParameteri),
+    DECLARE_CALL_ENTRY(glTexBuffer),
+    DECLARE_CALL_ENTRY(glTexBufferRange),
 
     {0}
 };

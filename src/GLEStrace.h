@@ -38,6 +38,8 @@ typedef struct gles_entry_t
 
 #define EGL_ENTRY(idx)              (egl_entry_table[idx])
 #define EGL_ENTRY_PTR(idx)          (EGL_ENTRY(idx).func_ptr)
+#define EGL_ENTRY_NAME(idx)         (EGL_ENTRY(idx).name)
+#define EGL_ENTRY_WRAP_PTR(idx)     (EGL_ENTRY(idx).wrap_ptr)
 
 #define GLES_ENTRY(idx)             (gles_entry_table[idx])
 #define GLES_ENTRY_PTR(idx)         (GLES_ENTRY(idx).func_ptr)
@@ -85,6 +87,8 @@ enum egl_entry_idx
 
     /* EGL_VERSION_1_5 */
     eglCreateImage_Idx,
+
+    eglAPIMAX_Idx
 };
 
 enum gles_entry_idx
@@ -255,18 +259,27 @@ enum gles_entry_idx
 
 
     /* GL_ES_VERSION_3_0 */
+    glReadBuffer_Idx,
     glBlitFramebuffer_Idx,
     glTexImage3D_Idx,
     glTexSubImage3D_Idx,
     //glCopyTexSubImage3D_Idx,
     //glCompressedTexImage3D_Idx,
     //glCompressedTexSubImage3D_Idx,
+    glUnmapBuffer_Idx,
     glRenderbufferStorageMultisample_Idx,
+    glMapBufferRange_Idx,
+    glFlushMappedBufferRange_Idx,
 
     glDrawRangeElements_Idx,
     glDrawBuffers_Idx,
     glDrawArraysInstanced_Idx,
     glDrawElementsInstanced_Idx,
+
+    glBindVertexArray_Idx,
+    glDeleteVertexArrays_Idx,
+    glGenVertexArrays_Idx,
+    glVertexAttribIPointer_Idx,
 
     glFenceSync_Idx,
     glIsSync_Idx,
@@ -275,7 +288,9 @@ enum gles_entry_idx
     glWaitSync_Idx,
     glGetSynciv_Idx,
 
+    glGetProgramBinary_Idx,
     glProgramBinary_Idx,
+    glProgramParameteri_Idx,
 
     glGetQueryiv_Idx,
     glGetQueryObjectuiv_Idx,
@@ -287,6 +302,18 @@ enum gles_entry_idx
     glGetSamplerParameterfv_Idx,
     glGetInternalformativ_Idx,
 
+    glGenSamplers_Idx,
+    glDeleteSamplers_Idx,
+    glBindSampler_Idx,
+    glSamplerParameteri_Idx,
+    glSamplerParameteriv_Idx,
+    glSamplerParameterf_Idx,
+    glSamplerParameterfv_Idx,
+
+    glVertexAttribDivisor_Idx,
+
+    glInvalidateFramebuffer_Idx,
+    glInvalidateSubFramebuffer_Idx,
     glTexStorage2D_Idx,
 
 
@@ -296,6 +323,7 @@ enum gles_entry_idx
 
     glGetFramebufferParameteriv_Idx,
     glGetBooleani_v_Idx,
+    glMemoryBarrier_Idx,
     glGetMultisamplefv_Idx,
     glGetTexLevelParameteriv_Idx,
     glGetTexLevelParameterfv_Idx,
@@ -304,6 +332,9 @@ enum gles_entry_idx
     glDrawElementsBaseVertex_Idx,
     glDrawRangeElementsBaseVertex_Idx,
     glDrawElementsInstancedBaseVertex_Idx,
+    glPatchParameteri_Idx,
+    glTexBuffer_Idx,
+    glTexBufferRange_Idx,
 
     glAPIMAX_Idx
 };
