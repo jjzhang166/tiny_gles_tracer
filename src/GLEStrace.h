@@ -93,7 +93,16 @@ enum egl_entry_idx
     eglGetCurrentContext_Idx,
 
     /* EGL_VERSION_1_5 */
+    eglCreateSync_Idx,
+    eglDestroySync_Idx,
+    eglClientWaitSync_Idx,
+    eglGetSyncAttrib_Idx,
     eglCreateImage_Idx,
+    eglDestroyImage_Idx,
+    eglGetPlatformDisplay_Idx,
+    eglCreatePlatformWindowSurface_Idx,
+    eglCreatePlatformPixmapSurface_Idx,
+    eglWaitSync_Idx,
 
     eglAPIMAX_Idx
 };

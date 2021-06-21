@@ -77,7 +77,16 @@ gles_entry_t egl_entry_table[] =
     DECLARE_CALL_ENTRY(eglGetCurrentContext),
 
     /* EGL_VERSION_1_5 */
+    DECLARE_CALL_ENTRY(eglCreateSync),
+    DECLARE_CALL_ENTRY(eglDestroySync),
+    DECLARE_CALL_ENTRY(eglClientWaitSync),
+    DECLARE_CALL_ENTRY(eglGetSyncAttrib),
     DECLARE_CALL_ENTRY(eglCreateImage),
+    DECLARE_CALL_ENTRY(eglDestroyImage),
+    DECLARE_CALL_ENTRY(eglGetPlatformDisplay),
+    DECLARE_CALL_ENTRY(eglCreatePlatformWindowSurface),
+    DECLARE_CALL_ENTRY(eglCreatePlatformPixmapSurface),
+    DECLARE_CALL_ENTRY(eglWaitSync),
     {0}
 };
 
