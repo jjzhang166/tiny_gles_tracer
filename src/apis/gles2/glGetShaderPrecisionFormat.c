@@ -44,12 +44,12 @@ glGetShaderPrecisionFormat (GLenum shadertype, GLenum precisiontype, GLint *rang
 
     glGetShaderPrecisionFormat_ (shadertype, precisiontype, range, precision);
 
-    fprintf (g_log_fp, "glGetShaderPrecisionFormat(%s, %s, %p, %p);",
+    fprintf (g_log_fp, "glGetShaderPrecisionFormat(%s, %s, %p, %p); // ",
                         get_shader_type_str (shadertype),
                         get_precision_type_str (precisiontype),
                         range, precision);
-    if (range)     fprintf (g_log_fp, " // range = %d", *range);
-    if (precision) fprintf (g_log_fp, " // precision = %d", *precision);
+    if (range)     fprintf (g_log_fp, "range=%d, ",   *range);
+    if (precision) fprintf (g_log_fp, "precision=%d", *precision);
     fprintf (g_log_fp, "\n");
 }
 

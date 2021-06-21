@@ -25,8 +25,9 @@ get_pname_str (GLenum pname)
     case GL_PROGRAM_SEPARABLE               : return "GL_PROGRAM_SEPARABLE";
     case GL_TRANSFORM_FEEDBACK_BUFFER_MODE  : return "GL_TRANSFORM_FEEDBACK_BUFFER_MODE";
     case GL_TRANSFORM_FEEDBACK_VARYINGS     : return "GL_TRANSFORM_FEEDBACK_VARYINGS";
-    case GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH : return "GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH ";
+    case GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH : return "GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH";
     case GL_VALIDATE_STATUS                 : return "GL_VALIDATE_STATUS ";
+    case GL_PROGRAM_BINARY_LENGTH           : return "GL_PROGRAM_BINARY_LENGTH";
     }
     snprintf (s_strbuf, sizeof (s_strbuf), "0x%x", pname);
     return s_strbuf;

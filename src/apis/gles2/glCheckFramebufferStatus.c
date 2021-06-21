@@ -10,7 +10,7 @@ get_target_str (GLenum target)
 {
     switch (target)
     {
-//  case GL_FRAMEBUFFER                 : return "GL_FRAMEBUFFER";
+    case GL_FRAMEBUFFER                 : return "GL_FRAMEBUFFER";
     case GL_DRAW_FRAMEBUFFER            : return "GL_DRAW_FRAMEBUFFER";
     case GL_READ_FRAMEBUFFER            : return "GL_READ_FRAMEBUFFER ";
     }

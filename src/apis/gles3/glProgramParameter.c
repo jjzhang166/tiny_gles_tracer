@@ -28,7 +28,7 @@ glProgramParameteri (GLuint program, GLenum pname, GLint value)
 
     glProgramParameteri_ (program, pname, value);
 
-    fprintf (g_log_fp, "glProgramParameteri(%d, %s, %d);\n ", 
+    fprintf (g_log_fp, "glProgramParameteri(%d, %s, %d);\n",
              program, get_pname_str (pname), value);
 }
 

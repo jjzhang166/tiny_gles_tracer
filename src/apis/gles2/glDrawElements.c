@@ -89,7 +89,7 @@ glDrawElements (GLenum mode, GLsizei count, GLenum type, const void *indices)
     if (g_capture_on_draw)
     {
         char fname[128];
-        snprintf (fname, sizeof(fname), "%05d_glDrawArrays_%05d_%05d.tga", g_pid, g_frame_counter, g_draw_counter);
+        snprintf (fname, sizeof(fname), "%05d_glDrawElements_%05d_%05d.tga", g_pid, g_frame_counter, g_draw_counter);
 
         int vp[4];
         glGetIntegerv_ (GL_VIEWPORT, vp);

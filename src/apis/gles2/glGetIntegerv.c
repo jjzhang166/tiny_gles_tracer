@@ -20,6 +20,7 @@ get_query_name_str (GLenum name)
     case GL_MAX_VERTEX_ATTRIBS              : return "GL_MAX_VERTEX_ATTRIBS";
     case GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS  : return "GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS";
     case GL_MAX_SAMPLES                     : return "GL_MAX_SAMPLES";
+    case GL_MAX_TESS_GEN_LEVEL              : return "GL_MAX_TESS_GEN_LEVEL";
     case GL_RED_BITS                        : return "GL_RED_BITS";
     case GL_GREEN_BITS                      : return "GL_GREEN_BITS";
     case GL_BLUE_BITS                       : return "GL_BLUE_BITS";
@@ -44,6 +45,8 @@ get_query_name_str (GLenum name)
     case GL_BLEND_SRC_ALPHA                 : return "GL_BLEND_SRC_ALPHA";
     case GL_BLEND_EQUATION                  : return "GL_BLEND_EQUATION";
     case GL_BLEND_EQUATION_ALPHA            : return "GL_BLEND_EQUATION_ALPHA";
+    case GL_IMPLEMENTATION_COLOR_READ_TYPE  : return "GL_IMPLEMENTATION_COLOR_READ_TYPE";
+    case GL_IMPLEMENTATION_COLOR_READ_FORMAT: return "GL_IMPLEMENTATION_COLOR_READ_FORMAT";
     }
     snprintf (s_strbuf, sizeof (s_strbuf), "0x%x", name);
     return s_strbuf;
