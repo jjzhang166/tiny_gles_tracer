@@ -304,33 +304,40 @@ enum gles_entry_idx
     glWaitSync_Idx,
     glGetSynciv_Idx,
 
-    glGetProgramBinary_Idx,
-    glProgramBinary_Idx,
-    glProgramParameteri_Idx,
-
     glGetQueryiv_Idx,
     glGetQueryObjectuiv_Idx,
     glGetIntegeri_v_Idx,
     glGetStringi_Idx,
     glGetInteger64v_Idx,
     glGetInteger64i_v_Idx,
-    glGetSamplerParameteriv_Idx,
-    glGetSamplerParameterfv_Idx,
-    glGetInternalformativ_Idx,
 
     glGenSamplers_Idx,
     glDeleteSamplers_Idx,
+    glIsSampler_Idx,
     glBindSampler_Idx,
     glSamplerParameteri_Idx,
     glSamplerParameteriv_Idx,
     glSamplerParameterf_Idx,
     glSamplerParameterfv_Idx,
+    glGetSamplerParameteriv_Idx,
+    glGetSamplerParameterfv_Idx,
 
     glVertexAttribDivisor_Idx,
+    glBindTransformFeedback_Idx,
+    glDeleteTransformFeedbacks_Idx,
+    glGenTransformFeedbacks_Idx,
+    glIsTransformFeedback_Idx,
+    glPauseTransformFeedback_Idx,
+    glResumeTransformFeedback_Idx,
 
+    glGetProgramBinary_Idx,
+    glProgramBinary_Idx,
+    glProgramParameteri_Idx,
     glInvalidateFramebuffer_Idx,
     glInvalidateSubFramebuffer_Idx,
     glTexStorage2D_Idx,
+    glTexStorage3D_Idx,
+    glGetInternalformativ_Idx,
 
 
     /* GL_ES_VERSION_3_1 */

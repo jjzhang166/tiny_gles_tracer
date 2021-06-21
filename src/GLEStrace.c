@@ -288,33 +288,40 @@ gles_entry_t gles_entry_table[] =
     DECLARE_CALL_ENTRY(glWaitSync),
     DECLARE_CALL_ENTRY(glGetSynciv),
 
-    DECLARE_CALL_ENTRY(glGetProgramBinary),
-    DECLARE_CALL_ENTRY(glProgramBinary),
-    DECLARE_CALL_ENTRY(glProgramParameteri),
-
     DECLARE_CALL_ENTRY(glGetQueryiv),
     DECLARE_CALL_ENTRY(glGetQueryObjectuiv),
     DECLARE_CALL_ENTRY(glGetIntegeri_v),
     DECLARE_CALL_ENTRY(glGetStringi),
     DECLARE_CALL_ENTRY(glGetInteger64v),
     DECLARE_CALL_ENTRY(glGetInteger64i_v),
-    DECLARE_CALL_ENTRY(glGetSamplerParameteriv),
-    DECLARE_CALL_ENTRY(glGetSamplerParameterfv),
-    DECLARE_CALL_ENTRY(glGetInternalformativ),
 
     DECLARE_CALL_ENTRY(glGenSamplers),
     DECLARE_CALL_ENTRY(glDeleteSamplers),
+    DECLARE_CALL_ENTRY(glIsSampler),
     DECLARE_CALL_ENTRY(glBindSampler),
     DECLARE_CALL_ENTRY(glSamplerParameteri),
     DECLARE_CALL_ENTRY(glSamplerParameteriv),
     DECLARE_CALL_ENTRY(glSamplerParameterf),
     DECLARE_CALL_ENTRY(glSamplerParameterfv),
+    DECLARE_CALL_ENTRY(glGetSamplerParameteriv),
+    DECLARE_CALL_ENTRY(glGetSamplerParameterfv),
 
     DECLARE_CALL_ENTRY(glVertexAttribDivisor),
+    DECLARE_CALL_ENTRY(glBindTransformFeedback),
+    DECLARE_CALL_ENTRY(glDeleteTransformFeedbacks),
+    DECLARE_CALL_ENTRY(glGenTransformFeedbacks),
+    DECLARE_CALL_ENTRY(glIsTransformFeedback),
+    DECLARE_CALL_ENTRY(glPauseTransformFeedback),
+    DECLARE_CALL_ENTRY(glResumeTransformFeedback),
 
+    DECLARE_CALL_ENTRY(glGetProgramBinary),
+    DECLARE_CALL_ENTRY(glProgramBinary),
+    DECLARE_CALL_ENTRY(glProgramParameteri),
     DECLARE_CALL_ENTRY(glInvalidateFramebuffer),
     DECLARE_CALL_ENTRY(glInvalidateSubFramebuffer),
     DECLARE_CALL_ENTRY(glTexStorage2D),
+    DECLARE_CALL_ENTRY(glTexStorage3D),
+    DECLARE_CALL_ENTRY(glGetInternalformativ),
 
 
     /* GL_ES_VERSION_3_1 */
