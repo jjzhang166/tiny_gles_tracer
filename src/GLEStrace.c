@@ -87,6 +87,22 @@ gles_entry_t egl_entry_table[] =
     DECLARE_CALL_ENTRY(eglCreatePlatformWindowSurface),
     DECLARE_CALL_ENTRY(eglCreatePlatformPixmapSurface),
     DECLARE_CALL_ENTRY(eglWaitSync),
+
+    /* EGL_EXT */
+    DECLARE_CALL_ENTRY(eglCreateSyncKHR),
+    DECLARE_CALL_ENTRY(eglDestroySyncKHR),
+    DECLARE_CALL_ENTRY(eglClientWaitSyncKHR),
+    DECLARE_CALL_ENTRY(eglGetSyncAttribKHR),
+    DECLARE_CALL_ENTRY(eglCreateImageKHR),
+    DECLARE_CALL_ENTRY(eglDestroyImageKHR),
+    DECLARE_CALL_ENTRY(eglGetPlatformDisplayEXT),
+    DECLARE_CALL_ENTRY(eglCreatePlatformWindowSurfaceEXT),
+    DECLARE_CALL_ENTRY(eglCreatePlatformPixmapSurfaceEXT),
+    DECLARE_CALL_ENTRY(eglWaitSyncKHR),
+
+    DECLARE_CALL_ENTRY(eglSetDamageRegionKHR),
+    DECLARE_CALL_ENTRY(eglSwapBuffersWithDamageKHR),
+
     {0}
 };
 
@@ -251,11 +267,17 @@ gles_entry_t gles_entry_table[] =
 
 
     /* GL_ES_2_0_EXT */
+    DECLARE_CALL_ENTRY(glEGLImageTargetTexture2DOES),
+    DECLARE_CALL_ENTRY(glEGLImageTargetRenderbufferStorageOES),
     DECLARE_CALL_ENTRY(glTexBufferOES),
     DECLARE_CALL_ENTRY(glTexBufferRangeOES),
     DECLARE_CALL_ENTRY(glDrawArraysInstancedBaseInstanceEXT),
     DECLARE_CALL_ENTRY(glDrawElementsInstancedBaseInstanceEXT),
     DECLARE_CALL_ENTRY(glDrawElementsInstancedBaseVertexBaseInstanceEXT),
+    DECLARE_CALL_ENTRY(glDiscardFramebufferEXT),
+    DECLARE_CALL_ENTRY(glMapBufferOES),
+    DECLARE_CALL_ENTRY(glUnmapBufferOES),
+    DECLARE_CALL_ENTRY(glGetBufferPointervOES),
 
 
     /* GL_ES_VERSION_3_0 */

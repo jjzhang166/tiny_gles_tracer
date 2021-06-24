@@ -4,9 +4,11 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#define EGL_EGLEXT_PROTOTYPES
 #define GL_GLEXT_PROTOTYPES
 
 #include <EGL/egl.h>
+#include <EGL/eglext.h>
 
 #if defined (USE_GLES_32)
 #include <GLES3/gl32.h>
@@ -103,6 +105,22 @@ enum egl_entry_idx
     eglCreatePlatformWindowSurface_Idx,
     eglCreatePlatformPixmapSurface_Idx,
     eglWaitSync_Idx,
+
+    /* EGL_EXT */
+    eglCreateSyncKHR_Idx,
+    eglDestroySyncKHR_Idx,
+    eglClientWaitSyncKHR_Idx,
+    eglGetSyncAttribKHR_Idx,
+    eglCreateImageKHR_Idx,
+    eglDestroyImageKHR_Idx,
+    eglGetPlatformDisplayEXT_Idx,
+    eglCreatePlatformWindowSurfaceEXT_Idx,
+    eglCreatePlatformPixmapSurfaceEXT_Idx,
+    eglWaitSyncKHR_Idx,
+
+    eglSetDamageRegionKHR_Idx,
+    eglSwapBuffersWithDamageKHR_Idx,
+
 
     eglAPIMAX_Idx
 };
@@ -267,11 +285,17 @@ enum gles_entry_idx
 
 
     /* GL_ES_2_0_EXT */
+    glEGLImageTargetTexture2DOES_Idx,
+    glEGLImageTargetRenderbufferStorageOES_Idx,
     glTexBufferOES_Idx,
     glTexBufferRangeOES_Idx,
     glDrawArraysInstancedBaseInstanceEXT_Idx,
     glDrawElementsInstancedBaseInstanceEXT_Idx,
     glDrawElementsInstancedBaseVertexBaseInstanceEXT_Idx,
+    glDiscardFramebufferEXT_Idx,
+    glMapBufferOES_Idx,
+    glUnmapBufferOES_Idx,
+    glGetBufferPointervOES_Idx,
 
 
     /* GL_ES_VERSION_3_0 */
