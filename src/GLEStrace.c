@@ -432,11 +432,22 @@ gles_entry_t gles_entry_table[] =
     DECLARE_CALL_ENTRY(glProgramUniformMatrix3x4fv),
     DECLARE_CALL_ENTRY(glProgramUniformMatrix4x3fv),
 
+    DECLARE_CALL_ENTRY(glValidateProgramPipeline),
+    DECLARE_CALL_ENTRY(glGetProgramPipelineInfoLog),
+    DECLARE_CALL_ENTRY(glBindImageTexture),
     DECLARE_CALL_ENTRY(glGetBooleani_v),
     DECLARE_CALL_ENTRY(glMemoryBarrier),
+    DECLARE_CALL_ENTRY(glMemoryBarrierByRegion),
+    DECLARE_CALL_ENTRY(glTexStorage2DMultisample),
     DECLARE_CALL_ENTRY(glGetMultisamplefv),
+    DECLARE_CALL_ENTRY(glSampleMaski),
     DECLARE_CALL_ENTRY(glGetTexLevelParameteriv),
     DECLARE_CALL_ENTRY(glGetTexLevelParameterfv),
+    DECLARE_CALL_ENTRY(glBindVertexBuffer),
+    DECLARE_CALL_ENTRY(glVertexAttribFormat),
+    DECLARE_CALL_ENTRY(glVertexAttribIFormat),
+    DECLARE_CALL_ENTRY(glVertexAttribBinding),
+    DECLARE_CALL_ENTRY(glVertexBindingDivisor),
 
 
     /* GL_ES_VERSION_3_2 */

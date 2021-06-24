@@ -448,11 +448,23 @@ enum gles_entry_idx
     glProgramUniformMatrix3x4fv_Idx,
     glProgramUniformMatrix4x3fv_Idx,
 
+    glValidateProgramPipeline_Idx,
+    glGetProgramPipelineInfoLog_Idx,
+    glBindImageTexture_Idx,
     glGetBooleani_v_Idx,
     glMemoryBarrier_Idx,
+    glMemoryBarrierByRegion_Idx,
+    glTexStorage2DMultisample_Idx,
     glGetMultisamplefv_Idx,
+    glSampleMaski_Idx,
     glGetTexLevelParameteriv_Idx,
     glGetTexLevelParameterfv_Idx,
+    glBindVertexBuffer_Idx,
+    glVertexAttribFormat_Idx,
+    glVertexAttribIFormat_Idx,
+    glVertexAttribBinding_Idx,
+    glVertexBindingDivisor_Idx,
+
 
     /* GL_ES_VERSION_3_2 */
     glDrawElementsBaseVertex_Idx,
