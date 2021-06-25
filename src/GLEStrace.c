@@ -500,9 +500,26 @@ gles_entry_t gles_entry_table[] =
     DECLARE_CALL_ENTRY(glDrawRangeElementsBaseVertex),
     DECLARE_CALL_ENTRY(glDrawElementsInstancedBaseVertex),
 
+    DECLARE_CALL_ENTRY(glFramebufferTexture),
+    DECLARE_CALL_ENTRY(glPrimitiveBoundingBox),
+    DECLARE_CALL_ENTRY(glGetGraphicsResetStatus),
+    DECLARE_CALL_ENTRY(glReadnPixels),
+    DECLARE_CALL_ENTRY(glGetnUniformfv),
+    DECLARE_CALL_ENTRY(glGetnUniformiv),
+    DECLARE_CALL_ENTRY(glGetnUniformuiv),
+    DECLARE_CALL_ENTRY(glMinSampleShading),
     DECLARE_CALL_ENTRY(glPatchParameteri),
+    DECLARE_CALL_ENTRY(glTexParameterIiv),
+    DECLARE_CALL_ENTRY(glTexParameterIuiv),
+    DECLARE_CALL_ENTRY(glGetTexParameterIiv),
+    DECLARE_CALL_ENTRY(glGetTexParameterIuiv),
+    DECLARE_CALL_ENTRY(glSamplerParameterIiv),
+    DECLARE_CALL_ENTRY(glSamplerParameterIuiv),
+    DECLARE_CALL_ENTRY(glGetSamplerParameterIiv),
+    DECLARE_CALL_ENTRY(glGetSamplerParameterIuiv),
     DECLARE_CALL_ENTRY(glTexBuffer),
     DECLARE_CALL_ENTRY(glTexBufferRange),
+    DECLARE_CALL_ENTRY(glTexStorage3DMultisample),
 
     {0}
 };

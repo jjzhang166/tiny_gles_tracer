@@ -518,9 +518,26 @@ enum gles_entry_idx
     glDrawRangeElementsBaseVertex_Idx,
     glDrawElementsInstancedBaseVertex_Idx,
 
+    glFramebufferTexture_Idx,
+    glPrimitiveBoundingBox_Idx,
+    glGetGraphicsResetStatus_Idx,
+    glReadnPixels_Idx,
+    glGetnUniformfv_Idx,
+    glGetnUniformiv_Idx,
+    glGetnUniformuiv_Idx,
+    glMinSampleShading_Idx,
     glPatchParameteri_Idx,
+    glTexParameterIiv_Idx,
+    glTexParameterIuiv_Idx,
+    glGetTexParameterIiv_Idx,
+    glGetTexParameterIuiv_Idx,
+    glSamplerParameterIiv_Idx,
+    glSamplerParameterIuiv_Idx,
+    glGetSamplerParameterIiv_Idx,
+    glGetSamplerParameterIuiv_Idx,
     glTexBuffer_Idx,
     glTexBufferRange_Idx,
+    glTexStorage3DMultisample_Idx,
 
     glAPIMAX_Idx
 };
