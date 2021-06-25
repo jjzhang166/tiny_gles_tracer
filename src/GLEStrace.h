@@ -491,9 +491,33 @@ enum gles_entry_idx
 
 
     /* GL_ES_VERSION_3_2 */
+    glBlendBarrier_Idx,
+    glCopyImageSubData_Idx,
+    glDebugMessageControl_Idx,
+    glDebugMessageInsert_Idx,
+    glDebugMessageCallback_Idx,
+    glGetDebugMessageLog_Idx,
+    glPushDebugGroup_Idx,
+    glPopDebugGroup_Idx,
+
+    glObjectLabel_Idx,
+    glGetObjectLabel_Idx,
+    glObjectPtrLabel_Idx,
+    glGetObjectPtrLabel_Idx,
+    glGetPointerv_Idx,
+    glEnablei_Idx,
+    glDisablei_Idx,
+    glBlendEquationi_Idx,
+    glBlendEquationSeparatei_Idx,
+    glBlendFunci_Idx,
+    glBlendFuncSeparatei_Idx,
+    glColorMaski_Idx,
+    glIsEnabledi_Idx,
+
     glDrawElementsBaseVertex_Idx,
     glDrawRangeElementsBaseVertex_Idx,
     glDrawElementsInstancedBaseVertex_Idx,
+
     glPatchParameteri_Idx,
     glTexBuffer_Idx,
     glTexBufferRange_Idx,

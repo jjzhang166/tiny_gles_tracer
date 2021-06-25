@@ -473,9 +473,33 @@ gles_entry_t gles_entry_table[] =
 
 
     /* GL_ES_VERSION_3_2 */
+    DECLARE_CALL_ENTRY(glBlendBarrier),
+    DECLARE_CALL_ENTRY(glCopyImageSubData),
+    DECLARE_CALL_ENTRY(glDebugMessageControl),
+    DECLARE_CALL_ENTRY(glDebugMessageInsert),
+    DECLARE_CALL_ENTRY(glDebugMessageCallback),
+    DECLARE_CALL_ENTRY(glGetDebugMessageLog),
+    DECLARE_CALL_ENTRY(glPushDebugGroup),
+    DECLARE_CALL_ENTRY(glPopDebugGroup),
+
+    DECLARE_CALL_ENTRY(glObjectLabel),
+    DECLARE_CALL_ENTRY(glGetObjectLabel),
+    DECLARE_CALL_ENTRY(glObjectPtrLabel),
+    DECLARE_CALL_ENTRY(glGetObjectPtrLabel),
+    DECLARE_CALL_ENTRY(glGetPointerv),
+    DECLARE_CALL_ENTRY(glEnablei),
+    DECLARE_CALL_ENTRY(glDisablei),
+    DECLARE_CALL_ENTRY(glBlendEquationi),
+    DECLARE_CALL_ENTRY(glBlendEquationSeparatei),
+    DECLARE_CALL_ENTRY(glBlendFunci),
+    DECLARE_CALL_ENTRY(glBlendFuncSeparatei),
+    DECLARE_CALL_ENTRY(glColorMaski),
+    DECLARE_CALL_ENTRY(glIsEnabledi),
+
     DECLARE_CALL_ENTRY(glDrawElementsBaseVertex),
     DECLARE_CALL_ENTRY(glDrawRangeElementsBaseVertex),
     DECLARE_CALL_ENTRY(glDrawElementsInstancedBaseVertex),
+
     DECLARE_CALL_ENTRY(glPatchParameteri),
     DECLARE_CALL_ENTRY(glTexBuffer),
     DECLARE_CALL_ENTRY(glTexBufferRange),
