@@ -550,6 +550,7 @@ extern int              g_frame_counter;
 extern int              g_draw_counter;
 extern int              g_capture_on_swap;
 extern int              g_capture_on_draw;
+extern int              g_dump_texture;
 extern int              g_geterror_on_swap;
 extern int              g_geterror_on_draw;
 extern int              g_force_line_render;

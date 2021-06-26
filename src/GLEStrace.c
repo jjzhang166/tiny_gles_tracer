@@ -18,6 +18,7 @@ int             g_draw_counter      = 0;
 int             g_force_line_render = 0;
 int             g_capture_on_draw   = 0;
 int             g_capture_on_swap   = 0;
+int             g_dump_texture      = 0;
 int             g_geterror_on_swap  = 0;
 int             g_geterror_on_draw  = 0;
 
@@ -670,6 +671,7 @@ prepare_gles_tracer ()
     /* capture on draw */
     g_capture_on_draw  = getenv_int ("GLES_TRACE_CAPTURE_ON_DRAW", 0);
     g_capture_on_swap  = getenv_int ("GLES_TRACE_CAPTURE_ON_SWAP", 0);
+    g_dump_texture     = getenv_int ("GLES_TRACE_DUMP_TEXTURE",    0);
     g_geterror_on_draw = getenv_int ("GLES_TRACE_GETERROR_ON_DRAW", 0);
     g_geterror_on_swap = getenv_int ("GLES_TRACE_GETERROR_ON_SWAP", 0);
 
@@ -686,6 +688,7 @@ prepare_gles_tracer ()
     fprintf (stderr, "[GLEStrace]  GLES_TRACE_FORCE_LINE_RENDER  : %d\n", g_force_line_render);
     fprintf (stderr, "[GLEStrace]  GLES_TRACE_CAPTURE_ON_DRAW    : %d\n", g_capture_on_draw);
     fprintf (stderr, "[GLEStrace]  GLES_TRACE_CAPTURE_ON_SWAP    : %d\n", g_capture_on_swap);
+    fprintf (stderr, "[GLEStrace]  GLES_TRACE_DUMP_TEXTURE       : %d\n", g_dump_texture);
     fprintf (stderr, "[GLEStrace]  GLES_TRACE_GETERROR_ON_DRAW   : %d\n", g_geterror_on_draw);
     fprintf (stderr, "[GLEStrace]  GLES_TRACE_GETERROR_ON_SWAP   : %d\n", g_geterror_on_swap);
     fprintf (stderr, "[GLEStrace] -----------------------------------------\n");

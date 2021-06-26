@@ -78,7 +78,7 @@ glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsiz
                         get_tex_format_str (format),
                         get_tex_type_str (type), pixels);
 
-    if (pixels)
+    if (pixels && g_dump_texture)
     {
         char fname[128];
         snprintf (fname, sizeof(fname), "%05d_glTexSubImage2D_%05d.tga", g_pid, s_count);

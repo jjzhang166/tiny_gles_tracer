@@ -74,7 +74,7 @@ glTexImage3D (GLenum target, GLint level, GLint internalformat, GLsizei width, G
                 get_tex_format_str (format),
                 get_tex_type_str (type), pixels);
 
-    if (pixels)
+    if (pixels && g_dump_texture)
     {
         char fname[128];
         snprintf (fname, sizeof(fname), "%05d_glTexImage3D_%05d.tga", g_pid, s_count);
